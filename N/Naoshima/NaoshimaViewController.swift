@@ -1,11 +1,12 @@
 import UIKit
 import Photos
+import TLPhotoPicker
 
-class NaoshimaViewController: UIViewController {
+class NaoshimaViewController: UIViewController, TLPhotosPickerViewControllerDelegate {
     
-    @IBOutlet weak var output: UITextField!
     @IBOutlet weak var input: UITextField!
     @IBOutlet weak var imageView: UIImageView!
+    var selectedAssets = [TLPHAsset]()
     
     var assetCollection: PHAssetCollection!
     var allPhotos: PHFetchResult<PHAsset>!
@@ -17,8 +18,22 @@ class NaoshimaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        output.isEnabled = false
-        initNaoshima()
+        //initNaoshima()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let viewController = PhotoPickerWithNavigationViewController()
+        viewController.delegate = self
+        viewController.didExceedMaximumNumberOfSelection = { [weak self] (picker) in
+            self?.showAlert(vc: picker)
+        }
+        var configure = TLPhotosPickerConfigure()
+        configure.numberOfColumn = 3
+        viewController.configure = configure
+        viewController.selectedAssets = self.selectedAssets
+        
+        self.present(viewController.wrapNavigationControllerWithoutBar(), animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,9 +47,79 @@ class NaoshimaViewController: UIViewController {
                       height: imageView.bounds.height * scale)
     }
     
+    func dismissPhotoPicker(withTLPHAssets: [TLPHAsset]) {
+        // use selected order, fullresolution image
+        self.selectedAssets = withTLPHAssets
+        getFirstSelectedImage()
+        //        getAsyncCopyTemporaryFile()
+    }
+    
+    func getAsyncCopyTemporaryFile() {
+        if let asset = self.selectedAssets.first {
+            asset.tempCopyMediaFile(progressBlock: { (progress) in
+                print(progress)
+            }, completionBlock: { (url, mimeType) in
+                print(mimeType)
+            })
+        }
+    }
+    
+    func getFirstSelectedImage() {
+        if let asset = self.selectedAssets.first {
+            if asset.type == .video {
+                asset.videoSize(completion: { [weak self] (size) in
+                    //self?.label.text = "video file size\(size)"
+                })
+                return
+            }
+            if let image = asset.fullResolutionImage {
+                print(image)
+                //self.label.text = "local storage image"
+                self.imageView.image = image
+            }else {
+                print("Can't get image at local storage, try download image")
+                asset.cloudImageDownload(progressBlock: { [weak self] (progress) in
+                    DispatchQueue.main.async {
+                        //self?.label.text = "download \(100*progress)%"
+                        print(progress)
+                    }
+                    }, completionBlock: { [weak self] (image) in
+                        if let image = image {
+                            //use image
+                            DispatchQueue.main.async {
+                                //self?.label.text = "complete download"
+                                self?.imageView.image = image
+                            }
+                        }
+                })
+            }
+        }
+    }
+    
+    func dismissPhotoPicker(withPHAssets: [PHAsset]) {
+        // if you want to used phasset.
+    }
+    
+    func photoPickerDidCancel() {
+        // cancel
+    }
+    
+    func dismissComplete() {
+        // picker dismiss completion
+    }
+    
+    func didExceedMaximumNumberOfSelection(picker: TLPhotosPickerViewController) {
+        self.showAlert(vc: picker)
+    }
+    
+    func showAlert(vc: UIViewController) {
+        let alert = UIAlertController(title: "", message: "Exceed Maximum Number Of Selection", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        vc.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func processQuery(_ sender: Any) {
         NSLog("Process Query")
-        output.text =  input.text
     }
     
     deinit {
@@ -54,13 +139,13 @@ class NaoshimaViewController: UIViewController {
         NSLog("userCollections photos: %d \n", userCollections.count)
         let rootPath = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
         pc = NaoshimaCBridge.initPhotoCluster(Bundle.main.path(forResource: "shape_predictor_68_face_landmarks.dat", ofType: nil),
-                                           faceRecoModel: Bundle.main.path(forResource: "dlib_face_recognition_resnet_model_v1.dat", ofType: nil))
+                                              faceRecoModel: Bundle.main.path(forResource: "dlib_face_recognition_resnet_model_v1.dat", ofType: nil))
         do {
             kb = try KnowledgeBase(dblocation: rootPath.appendingPathComponent("pkg_photograph.sqlite").path)
         } catch {
             NSLog("Oops")
         }
-        processImages()
+        //processImages()
     }
     
     func processImages() {
@@ -74,7 +159,7 @@ class NaoshimaViewController: UIViewController {
                     let v = NaoshimaCBridge.getFaceDescriptor(self.pc, photoPath: photopath) as NSArray
                     if v.count > 0 { //handle any photo with a human face
                         let id = self.kb!.AssertEntity(entity: Entity(name: photopath, uuid: UUID(), prob: 0.9, sourceMlEngine: "resnetModel", dataSource: photopath,
-                                                                       data: Feature(tags: ["photo", "acme"], data: v)))
+                                                                      data: Feature(tags: ["photo", "acme"], data: v)))
                         print("ingested:", photopath)
                     }
                 })
