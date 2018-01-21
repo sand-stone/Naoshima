@@ -11,9 +11,14 @@
 		6203F3BE2014376700668B8C /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6203F3BD2014376700668B8C /* ImagePreviewViewController.swift */; };
 		6203F3C0201437A300668B8C /* ImagePreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6203F3BF201437A200668B8C /* ImagePreviewViewController.xib */; };
 		6203F3C22014386200668B8C /* TLPhotosPicker+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6203F3C12014386200668B8C /* TLPhotosPicker+Extension.swift */; };
+		6203F3CF2014576500668B8C /* GridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6203F3CE2014576500668B8C /* GridViewCell.swift */; };
+		6203F3D62014577300668B8C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6203F3D02014577300668B8C /* MasterViewController.swift */; };
+		6203F3D72014577300668B8C /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6203F3D12014577300668B8C /* AssetViewController.swift */; };
+		6203F3D92014577300668B8C /* AssetGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6203F3D32014577300668B8C /* AssetGridViewController.swift */; };
+		6203F3DB2014577300668B8C /* Database in Resources */ = {isa = PBXBuildFile; fileRef = 6203F3D52014577300668B8C /* Database */; };
+		6203F3DE2014591900668B8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6203F3DC2014591900668B8C /* Main.storyboard */; };
 		6208D0A5200D452100D32976 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6208D0A4200D452100D32976 /* AppDelegate.swift */; };
 		6208D0A7200D452100D32976 /* NaoshimaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6208D0A6200D452100D32976 /* NaoshimaViewController.swift */; };
-		6208D0AA200D452100D32976 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6208D0A8200D452100D32976 /* Main.storyboard */; };
 		6208D0AC200D452100D32976 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6208D0AB200D452100D32976 /* Assets.xcassets */; };
 		6208D0AF200D452100D32976 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6208D0AD200D452100D32976 /* LaunchScreen.storyboard */; };
 		6208D0B8200D519600D32976 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6208D0B7200D519600D32976 /* opencv2.framework */; };
@@ -64,10 +69,15 @@
 		6203F3BD2014376700668B8C /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
 		6203F3BF201437A200668B8C /* ImagePreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImagePreviewViewController.xib; sourceTree = "<group>"; };
 		6203F3C12014386200668B8C /* TLPhotosPicker+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TLPhotosPicker+Extension.swift"; sourceTree = "<group>"; };
+		6203F3CE2014576500668B8C /* GridViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewCell.swift; sourceTree = "<group>"; };
+		6203F3D02014577300668B8C /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		6203F3D12014577300668B8C /* AssetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
+		6203F3D32014577300668B8C /* AssetGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGridViewController.swift; sourceTree = "<group>"; };
+		6203F3D52014577300668B8C /* Database */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Database; sourceTree = "<group>"; };
+		6203F3DD2014591900668B8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6208D0A1200D452100D32976 /* Naoshima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Naoshima.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6208D0A4200D452100D32976 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6208D0A6200D452100D32976 /* NaoshimaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaoshimaViewController.swift; sourceTree = "<group>"; };
-		6208D0A9200D452100D32976 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6208D0AB200D452100D32976 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6208D0AE200D452100D32976 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6208D0B0200D452100D32976 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -176,14 +186,19 @@
 				6208D0D2200D59D700D32976 /* Sqlite */,
 				62DFD7D920140A9B003D2054 /* Database */,
 				6208D0A4200D452100D32976 /* AppDelegate.swift */,
+				6203F3D32014577300668B8C /* AssetGridViewController.swift */,
+				6203F3D12014577300668B8C /* AssetViewController.swift */,
+				6203F3D52014577300668B8C /* Database */,
+				6203F3D02014577300668B8C /* MasterViewController.swift */,
+				6203F3CE2014576500668B8C /* GridViewCell.swift */,
 				6203F3C12014386200668B8C /* TLPhotosPicker+Extension.swift */,
 				6203F3BB2014370500668B8C /* PhotoPickerWithNavigationViewController.swift */,
 				6203F3BD2014376700668B8C /* ImagePreviewViewController.swift */,
 				6203F3BF201437A200668B8C /* ImagePreviewViewController.xib */,
 				6208D0A6200D452100D32976 /* NaoshimaViewController.swift */,
-				6208D0A8200D452100D32976 /* Main.storyboard */,
 				6208D0AB200D452100D32976 /* Assets.xcassets */,
 				6208D0AD200D452100D32976 /* LaunchScreen.storyboard */,
+				6203F3DC2014591900668B8C /* Main.storyboard */,
 				6208D0B0200D452100D32976 /* Info.plist */,
 			);
 			path = Naoshima;
@@ -334,11 +349,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6203F3DE2014591900668B8C /* Main.storyboard in Resources */,
 				6208D117200F0DCD00D32976 /* dlib_face_recognition_resnet_model_v1.dat in Resources */,
 				6208D118200F0DCD00D32976 /* shape_predictor_68_face_landmarks.dat in Resources */,
 				6208D0AF200D452100D32976 /* LaunchScreen.storyboard in Resources */,
+				6203F3DB2014577300668B8C /* Database in Resources */,
 				6208D0AC200D452100D32976 /* Assets.xcassets in Resources */,
-				6208D0AA200D452100D32976 /* Main.storyboard in Resources */,
 				6203F3C0201437A300668B8C /* ImagePreviewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6208D0FE200D5A4F00D32976 /* DateAndTimeFunctions.swift in Sources */,
+				6203F3CF2014576500668B8C /* GridViewCell.swift in Sources */,
 				6208D0F5200D5A4F00D32976 /* Schema.swift in Sources */,
 				6208D112200D5B4B00D32976 /* NaoshimaCWrapper.mm in Sources */,
 				6208D0A7200D452100D32976 /* NaoshimaViewController.swift in Sources */,
@@ -416,6 +433,7 @@
 				6208D109200D5A4F00D32976 /* Statement.swift in Sources */,
 				6208D102200D5A4F00D32976 /* Foundation.swift in Sources */,
 				6208D103200D5A4F00D32976 /* AggregateFunctions.swift in Sources */,
+				6203F3D92014577300668B8C /* AssetGridViewController.swift in Sources */,
 				6208D113200D5B4B00D32976 /* PhotoCluster.cpp in Sources */,
 				6208D114200D5B4B00D32976 /* FaceBlendCommon.cpp in Sources */,
 				6208D0D7200D5A4000D32976 /* KnowledgeBase.swift in Sources */,
@@ -432,9 +450,11 @@
 				6208D100200D5A4F00D32976 /* CustomFunctions.swift in Sources */,
 				6208D0F4200D5A4F00D32976 /* FTS4.swift in Sources */,
 				6208D104200D5A4F00D32976 /* Operators.swift in Sources */,
+				6203F3D72014577300668B8C /* AssetViewController.swift in Sources */,
 				6203F3BC2014370500668B8C /* PhotoPickerWithNavigationViewController.swift in Sources */,
 				6208D0FC200D5A4F00D32976 /* Blob.swift in Sources */,
 				6208D0F3200D5A4F00D32976 /* SQLite-Bridging.m in Sources */,
+				6203F3D62014577300668B8C /* MasterViewController.swift in Sources */,
 				6208D0F6200D5A4F00D32976 /* FTS5.swift in Sources */,
 				6203F3BE2014376700668B8C /* ImagePreviewViewController.swift in Sources */,
 				6208D107200D5A4F00D32976 /* Coding.swift in Sources */,
@@ -444,10 +464,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6208D0A8200D452100D32976 /* Main.storyboard */ = {
+		6203F3DC2014591900668B8C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6208D0A9200D452100D32976 /* Base */,
+				6203F3DD2014591900668B8C /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
