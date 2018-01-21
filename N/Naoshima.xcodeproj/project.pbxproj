@@ -52,6 +52,7 @@
 		6208D114200D5B4B00D32976 /* FaceBlendCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6208D110200D5B4B00D32976 /* FaceBlendCommon.cpp */; };
 		6208D117200F0DCD00D32976 /* dlib_face_recognition_resnet_model_v1.dat in Resources */ = {isa = PBXBuildFile; fileRef = 6208D115200F0DCC00D32976 /* dlib_face_recognition_resnet_model_v1.dat */; };
 		6208D118200F0DCD00D32976 /* shape_predictor_68_face_landmarks.dat in Resources */ = {isa = PBXBuildFile; fileRef = 6208D116200F0DCD00D32976 /* shape_predictor_68_face_landmarks.dat */; };
+		E80191FAA5448A8ADB0A0DE4 /* Pods_Naoshima.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91303F31A2392C9165F5763 /* Pods_Naoshima.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,9 @@
 		6208D111200D5B4B00D32976 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
 		6208D115200F0DCC00D32976 /* dlib_face_recognition_resnet_model_v1.dat */ = {isa = PBXFileReference; lastKnownFileType = file; name = dlib_face_recognition_resnet_model_v1.dat; path = models/dlib_face_recognition_resnet_model_v1.dat; sourceTree = "<group>"; };
 		6208D116200F0DCD00D32976 /* shape_predictor_68_face_landmarks.dat */ = {isa = PBXFileReference; lastKnownFileType = file; name = shape_predictor_68_face_landmarks.dat; path = models/shape_predictor_68_face_landmarks.dat; sourceTree = "<group>"; };
+		B91303F31A2392C9165F5763 /* Pods_Naoshima.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Naoshima.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C79BE88FCE60AF2B93FB4A34 /* Pods-Naoshima.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Naoshima.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Naoshima/Pods-Naoshima.debug.xcconfig"; sourceTree = "<group>"; };
+		DD0589A5AC54DF13A0536418 /* Pods-Naoshima.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Naoshima.release.xcconfig"; path = "Pods/Target Support Files/Pods-Naoshima/Pods-Naoshima.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 				6208D0BE200D51B500D32976 /* CoreImage.framework in Frameworks */,
 				6208D0BA200D51AC00D32976 /* Accelerate.framework in Frameworks */,
 				6208D0B8200D519600D32976 /* opencv2.framework in Frameworks */,
+				E80191FAA5448A8ADB0A0DE4 /* Pods_Naoshima.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +147,7 @@
 				6208D0A2200D452100D32976 /* Products */,
 				6208D0B6200D519600D32976 /* Frameworks */,
 				6208D0C9200D575700D32976 /* Naoshima-Bridging-Header.h */,
+				B63AFCCA52396F2AB1005B4C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,6 +186,7 @@
 				6208D0BC200D51B500D32976 /* CoreImage.framework */,
 				6208D0B9200D51AC00D32976 /* Accelerate.framework */,
 				6208D0B7200D519600D32976 /* opencv2.framework */,
+				B91303F31A2392C9165F5763 /* Pods_Naoshima.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -241,6 +248,15 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
+		B63AFCCA52396F2AB1005B4C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C79BE88FCE60AF2B93FB4A34 /* Pods-Naoshima.debug.xcconfig */,
+				DD0589A5AC54DF13A0536418 /* Pods-Naoshima.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -248,9 +264,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6208D0B3200D452100D32976 /* Build configuration list for PBXNativeTarget "Naoshima" */;
 			buildPhases = (
+				6FFA5F61D1BE2EAF5A1AE5F4 /* [CP] Check Pods Manifest.lock */,
 				6208D09D200D452100D32976 /* Sources */,
 				6208D09E200D452100D32976 /* Frameworks */,
 				6208D09F200D452100D32976 /* Resources */,
+				0BE0DCB78B4ABD4023E566C9 /* [CP] Embed Pods Frameworks */,
+				4E3526DAE66D4E957C366235 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -310,6 +329,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BE0DCB78B4ABD4023E566C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Naoshima/Pods-Naoshima-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/TLPhotoPicker/TLPhotoPicker.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TLPhotoPicker.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Naoshima/Pods-Naoshima-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E3526DAE66D4E957C366235 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Naoshima/Pods-Naoshima-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FFA5F61D1BE2EAF5A1AE5F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Naoshima-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6208D09D200D452100D32976 /* Sources */ = {
@@ -481,6 +554,7 @@
 		};
 		6208D0B4200D452100D32976 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C79BE88FCE60AF2B93FB4A34 /* Pods-Naoshima.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -517,6 +591,7 @@
 		};
 		6208D0B5200D452100D32976 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD0589A5AC54DF13A0536418 /* Pods-Naoshima.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
