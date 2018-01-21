@@ -21,8 +21,7 @@ class NaoshimaViewController: UIViewController, TLPhotosPickerViewControllerDele
         //initNaoshima()
         
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
+    @IBAction func viewBottonTap(_ sender: Any) {
         let viewController = PhotoPickerWithNavigationViewController()
         viewController.delegate = self
         viewController.didExceedMaximumNumberOfSelection = { [weak self] (picker) in
@@ -34,6 +33,10 @@ class NaoshimaViewController: UIViewController, TLPhotosPickerViewControllerDele
         viewController.selectedAssets = self.selectedAssets
         
         self.present(viewController.wrapNavigationControllerWithoutBar(), animated: true, completion: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     override func didReceiveMemoryWarning() {
