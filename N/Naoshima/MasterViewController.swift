@@ -25,7 +25,7 @@ class MasterViewController: UITableViewController {
     var allPhotos: PHFetchResult<PHAsset>!
     var smartAlbums: PHFetchResult<PHAssetCollection>!
     var userCollections: PHFetchResult<PHCollection>!
-    let sectionLocalizedTitles = ["", NSLocalizedString("Smart Albums", comment: ""), NSLocalizedString("Albums", comment: "")]
+    let sectionLocalizedTitles = ["", NSLocalizedString("iOS Smart Albums", comment: ""), NSLocalizedString("Naoshima Albums", comment: "")]
     
     // MARK: UIViewController / Lifecycle
     
@@ -131,7 +131,7 @@ class MasterViewController: UITableViewController {
         switch Section(rawValue: indexPath.section)! {
         case .allPhotos:
             let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.allPhotos.rawValue, for: indexPath)
-            cell.textLabel!.text = NSLocalizedString("All Photos indexed by Naoshima", comment: "")
+            cell.textLabel!.text = NSLocalizedString("Semantic Indexed Photos", comment: "")
             return cell
             
         case .smartAlbums:
