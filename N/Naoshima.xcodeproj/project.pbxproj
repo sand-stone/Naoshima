@@ -111,6 +111,7 @@
 		6208D111200D5B4B00D32976 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
 		6208D115200F0DCC00D32976 /* dlib_face_recognition_resnet_model_v1.dat */ = {isa = PBXFileReference; lastKnownFileType = file; name = dlib_face_recognition_resnet_model_v1.dat; path = models/dlib_face_recognition_resnet_model_v1.dat; sourceTree = "<group>"; };
 		6208D116200F0DCD00D32976 /* shape_predictor_68_face_landmarks.dat */ = {isa = PBXFileReference; lastKnownFileType = file; name = shape_predictor_68_face_landmarks.dat; path = models/shape_predictor_68_face_landmarks.dat; sourceTree = "<group>"; };
+		6249759720142E6800DEE47E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B91303F31A2392C9165F5763 /* Pods_Naoshima.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Naoshima.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C79BE88FCE60AF2B93FB4A34 /* Pods-Naoshima.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Naoshima.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Naoshima/Pods-Naoshima.debug.xcconfig"; sourceTree = "<group>"; };
 		DD0589A5AC54DF13A0536418 /* Pods-Naoshima.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Naoshima.release.xcconfig"; path = "Pods/Target Support Files/Pods-Naoshima/Pods-Naoshima.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +141,7 @@
 		6208D098200D452100D32976 = {
 			isa = PBXGroup;
 			children = (
+				6249759720142E6800DEE47E /* README.md */,
 				6208D115200F0DCC00D32976 /* dlib_face_recognition_resnet_model_v1.dat */,
 				6208D116200F0DCD00D32976 /* shape_predictor_68_face_landmarks.dat */,
 				6208D0C3200D541000D32976 /* libdlib.a */,
